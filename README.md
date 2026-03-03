@@ -1,13 +1,15 @@
-# Basile - Gestion de plans de cultures potagères
+# Basile v1 – Gestion de plans de cultures potagères
 
-Application React + TypeScript + Firebase pour gérer des plans de cultures potagères avec une interface entièrement en français.
+**Version figée (v1.0.0).** Ce dépôt est en mode maintenance : correctifs critiques uniquement, pas de nouvelles fonctionnalités. Pour la version orientée pro, voir le dépôt dédié [Basile Pro](https://github.com/JeanJeanLeM/basile-pro) (nouveau repo).
+
+Application React + TypeScript avec **Supabase** (authentification + base de données) pour gérer des plans de cultures potagères avec une interface entièrement en français.
 
 ## 🚀 Démarrage rapide
 
 ### Prérequis
 
 - Node.js 18+ et npm
-- Compte Firebase avec projet configuré
+- Projet [Supabase](https://supabase.com) avec le schéma initial appliqué
 
 ### Installation
 
@@ -16,12 +18,25 @@ Application React + TypeScript + Firebase pour gérer des plans de cultures pota
 npm install
 ```
 
-2. Configurer Firebase :
-   - Copier `envexample` vers `.env`
-   - Remplir les variables d'environnement Firebase
+2. Configurer l'environnement :
+   - Copier `.env.example` vers `.env` et `.env.development`
+   - Remplir les variables Supabase (URL, anon key pour le frontend ; service_role + JWT secret pour le backend)
 
-3. Lancer le serveur de développement :
+3. Appliquer le schéma SQL Supabase :
+   - Exécuter le contenu de `supabase/migrations/001_initial_schema.sql` dans l’éditeur SQL du projet Supabase
+
+4. Lancer le projet (un seul terminal) :
 ```bash
+npm run dev:all
+```
+Cela démarre l’API Express (port 3001) et le frontend Vite (port 5173) en parallèle.
+
+Ou en deux terminaux :
+```bash
+# Terminal 1 - API
+npm run dev:server
+
+# Terminal 2 - Frontend
 npm run dev
 ```
 
@@ -34,80 +49,55 @@ src/
 │   ├── ui/          # Composants UI de base
 │   ├── planning/    # Composants planning
 │   ├── crops/       # Composants cultures
-│   ├── todo/        # Composants calendrier
-│   └── basil/       # Composants assistant
-├── pages/           # Pages/écrans principaux
-├── hooks/           # Hooks React personnalisés
-├── services/        # Services Firebase et logique métier
+│   ├── todo/        # Calendrier
+│   └── basil/       # Assistant Basil
+├── pages/           # Pages principales
+├── hooks/           # Hooks React (useAuth, useCrops, usePlans, etc.)
+├── services/        # API client, stockage invité, migration
 ├── utils/           # Utilitaires
 ├── types/           # Types TypeScript
 └── styles/          # Styles globaux
+
+server/              # API Express (JWT Supabase + Supabase DB)
+├── middleware/      # Vérification JWT Supabase
+└── supabase.ts      # Client Supabase (service_role)
 ```
 
-## 🔥 Configuration Firebase
+## 🔐 Authentification Supabase
 
-### Collections Firestore
+- Dans le projet Supabase : **Authentication** > **Providers** pour activer Email/Password et Google
+- Configurer les **URLs de redirection** (site URL, redirect URLs) dans Authentication > URL Configuration
+- Le frontend utilise le client Supabase (anon key) pour `signInWithPassword`, `signUp`, `signInWithOAuth`
 
-- `crops` : Cultures disponibles
-- `plans` : Plans de cultures de l'utilisateur
-- `userPreferences` : Préférences utilisateur pour les suggestions
+## 🗄️ Base de données Supabase
 
-### Indexes Firestore requis
-
-Les index composites suivants sont nécessaires pour les requêtes :
-
-1. **Collection `plans`** : `userId` (ascending) + `plantingWeek` (ascending)
-2. **Collection `crops`** : `userId` (ascending) + `name` (ascending)
-
-#### Création des index
-
-**Option 1 - Via les liens d'erreur (recommandé)** :
-Lorsque vous voyez une erreur dans la console indiquant qu'un index est requis, cliquez sur le lien fourni. Firebase créera automatiquement l'index.
-
-**Option 2 - Via Firebase CLI** :
-```bash
-# Installer Firebase CLI si ce n'est pas déjà fait
-npm install -g firebase-tools
-
-# Se connecter à Firebase
-firebase login
-
-# Initialiser Firebase dans le projet (si pas déjà fait)
-firebase init firestore
-
-# Déployer les index
-firebase deploy --only firestore:indexes
-```
-
-Le fichier `firestore.indexes.json` contient déjà la configuration des index nécessaires.
-
-### Règles de sécurité
-
-Toutes les collections doivent avoir des règles permettant la lecture/écriture uniquement si `userId == request.auth.uid`.
+- Tables : `crops`, `plans`, `user_preferences`
+- Le schéma et les index sont dans `supabase/migrations/001_initial_schema.sql`
+- Les scripts de seed : `npm run seed:cultures`, `npm run seed:plans` (avec `data/` et variables d’environnement serveur)
 
 ## 🛠️ Technologies
 
 - **React 18** avec TypeScript
 - **Vite** pour le build
-- **Firebase** (Auth + Firestore)
-- **React Router v6** pour la navigation
-- **Tailwind CSS** pour le styling
-- **Lucide React** pour les icônes
+- **Supabase Auth** (email/mot de passe, Google)
+- **Supabase** (PostgreSQL)
+- **Express** (API REST, validation JWT)
+- **React Router v6**, **Tailwind CSS**, **Lucide React**
 
 ## 📝 Fonctionnalités
 
-- ✅ Authentification anonyme automatique
-- ✅ Conversion compte anonyme → permanent
-- ✅ Gestion des cultures (CRUD)
-- ✅ Planification avec calcul automatique des semaines
-- ✅ Calendrier annuel des tâches
-- ✅ Assistant Basil avec suggestions personnalisées
-- ✅ Interface responsive (desktop/mobile)
-
-## 🎯 Prochaines étapes
-
-Voir le plan de développement dans `.cursor/plans/` pour l'ordre d'implémentation des features.
+- Mode invité (données en localStorage) avec migration à la création de compte
+- Authentification Supabase (email/mot de passe, Google)
+- Gestion des cultures et des plans (CRUD)
+- Planification avec calcul automatique des semaines
+- Calendrier annuel des tâches
+- Assistant Basil avec suggestions personnalisées
+- Interface responsive (desktop/mobile)
 
 ## 📄 Licence
 
 MIT
+
+---
+
+*Basile v1 – Dernière release : v1.0.0. Maintenance minimale.*

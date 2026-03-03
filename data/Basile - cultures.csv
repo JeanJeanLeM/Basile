@@ -1,0 +1,54 @@
+name,"type (racine, tubercule, legume_fruit, legume_fruit, choux)",Famille,Cold_resistance,sunNeed,WaterNeed,"FertilisationNeed (1,2,3 3 = high)",spacing,spacing,weeksInNursury,weeksbeforeharvest,weeksharvesting,plantingMethod,sowingWeeks,plantingWeeks
+Aillet,bulbe,alliacées,4,4,2,2,15x15,15x15,0,20,4,semis,41-47,41-47
+Aneth,aromatique,apiacées,3,4,3,1,15x15,15x15,4,8,12,both,15-30,19-34
+Basilic,aromatique,lamiacée,2,4,3,2,15x15,15x15,4,8,12,both,10-25,14-28
+Ciboulette,aromatique,alliacées,3,2,2,2,15x15,15x15,4,8,12,both,5-35,9-39
+Persil,aromatique,apiacées,2,3,2,2,15x15,15x15,4,8,12,both,9-39,13-43
+Oignon vert,bulbe,alliacées,4,3,2,2,15x15,15x15,0,12,8,plantation,9-17 | 40-48,9-17 | 40-48
+ail,bulbe,alliacées,4,3,2,2,15x15,15x15,0,32,8,semis,9-17 | 40-48,9-17 | 40-48
+Rhubarbe,perenne,polygonacées,5,2,2,1,100x100,100x100,4,58,48,plantation,,
+Aubergine,fruit,solanacées,1,5,4,4,50x50,50x50,10,12,16,plantation,5-17,15-27
+Betterave,racine,amaranthacées,4,3,2,2,15x15,15x15,6,8,8,both,14-26,20-32
+Blette,feuille,amaranthacées,4,3,3,3,30x30,30x30,6,8,20,plantation,14-26 | 36-39,20-32 | 42-45
+Carotte,racine,apiacées,4,4,3,3,2x15,2x15,0,21,6,semis,5-30 | 40,5-30 | 40
+Céléri,racine,apiacées,4,3,4,3,40x40,40x40,12,16,8,plantation,9-17,21-29
+Chicorée,feuille,asteracées,2,4,4,3,30x30,30x30,3,12,6,Plantation,18-35,21-38
+Choux Brocolis,feuille,brassicacées,3,3,3,3,50x50,50x50,4,10,6,plantation,5-39,5-39
+Choux Bruxelles,feuille,brassicacées,3,3,3,3,50x50,50x50,4,17,20,plantation,9-26,13-30
+Choux rond,feuille,brassicacées,3,3,3,3,50x50,50x50,4,12,6,plantation,9-35,13-39
+Choux Chinois,feuille,brassicacées,3,3,3,3,50x50,50x50,4,8,4,plantation,27-45 | 5-17,31-49 | 9-21
+Choux Fleur,feuille,brassicacées,3,3,3,3,50x50,50x50,4,14,3,plantation,5-39,9-43
+Choux Frisé,feuille,brassicacées,3,3,3,3,50x50,50x50,4,13,20,plantation,14-30,18-34
+Choux Rave,feuille,brassicacées,3,3,3,3,50x50,50x50,4,8,4,plantation,5-35 | 36-39,9-39 | 40-43
+Choux Romanesco,feuille,brassicacées,3,3,3,3,50x50,50x50,4,13,3,plantation,27-45 | 5-17,31-49 | 9-21
+Concombre,fruit,cucurbitacées,2,4,4,4,50x50,50x50,4,8,16,plantation,9-20,13-24
+Courge,fruit,cucurbitacées,2,4,4,3,60x80,60x80,4,16,4,plantation,14-22,18-26
+Courgette,fruit,cucurbitacées,2,4,4,4,60x80,60x80,4,8,12,plantation,9-20,13-24
+Echalote,bulbe,alliacées,4,2,2,2,15x15,15x15,0,20,2,plantation,9-17 | 40-48,9-17 | 40-48
+Endive,feuille,asteracées,5,0,2,4,5x5,5x5,0,5,2,plantation,,
+Epinard,feuille,amaranthacées,4,3,3,2,20x20,20x20,4,6,20,both,5-17 | 32-40,9-21 | 36-44
+Fenouil,feuille,apiacées,3,4,3,3,30x30,30x30,6,12,3,plantation,9-30,15-36
+Fève,legumineuse,fabacées,4,3,2,1,10x30,10x30,4,16,6,both,5-17 | 40-48,9-21 | 44-52
+Haricot,legumineuse,fabacées,2,4,3,1,10x80,10x80,2,8,6,both,16-35,18-37
+Mesclun,feuille,asteracées,3,3,3,2,"1,5x15","1,5x15",4,8,8,both,5-17 | 36-43,9-21 | 40-47
+Laitue,feuille,asteracées,3,3,3,3,30x30,30x30,6,10,2,both,5-43,9-47
+Maïs,grain,poacées,2,4,4,4,15x50,15x50,,,,both,14-20,22-28
+Mâche,feuille,caprifoliacées,4,2,2,2,6x10,6x10,6,8,2,both,29-43 | 5,35-49 | 11
+Melon,fruit,cucurbitacées,1,4,4,4,60x80,60x80,4,11,3,plantation,9-22,13-26
+Navet,racine,brassicacées,4,3,3,2,4x15,4x15,0,8,5,semis,9-39,9-39
+Oignon,bulbe,alliacées,4,3,2,2,10x10,10x10,0,16,10,plantation,9-17 | 40-48,9-17 | 40-48
+Panais,racine,apiacées,4,3,2,2,4x15,4x15,0,16,10,semis,5-30,5-30
+Pastèque,fruit,cucurbitacées,2,4,4,3,60x80,60x80,4,16,4,plantation,9-22,13-26
+Patate douce,tubercule,Convolvulacées,1,5,4,3,60x60,60x60,0,16,12,plantation,18-26,18-26
+Petit Pois,legumineuse,fabacées,4,3,3,1,5x80,5x80,0,14,4,both,5-17 | 40-48,9-21 | 44-52
+Piment,fruit,solanacées,1,5,4,3,60x80,60x80,6,14,16,plantation,9-17,17-28
+Poireaux,racine,alliacées,4,3,3,3,"7,5x20","7,5x20",0,12,30,plantation,5-22,14-30
+Poivron,fruit,solanacées,4,5,4,1,60x80,60x80,10,16,12,plantation,9-17,17-28
+Pomme de terre,tubercule,solanacées,3,3,3,3,40x40,40x40,0,16,6,plantation,14-22,14-22
+Pourpier,feuille,Portulacacées,3,3,3,3,20x20,20x20,,10,2,both,14-35,14-35
+Radis,racine,brassicacées,4,2,3,2,"2,5x7,5","2,5x7,5",0,4,2,semis,5-43,5-43
+Radis longs,racine,brassicacées,4,2,3,2,4x15,4x15,0,13,4,semis,5-43,5-43
+Roquette,feuille,brassicacées,2,3,3,2,15x15,15x15,8,8,8,both,9-39,13-43
+Tomate ancienne,fruit,solanacées,2,4,4,4,50x50,50x50,10,13,18,plantation,9-17,17-28
+Tomate Cerise,fruit,solanacées,2,4,4,4,50x50,50x50,10,13,18,plantation,9-17,17-28
+Tomate ronde,fruit,solanacées,2,4,4,4,50x50,50x50,10,13,18,plantation,9-17,17-28
